@@ -3,8 +3,6 @@ int calcTeamScore(Map<String, int> team) {
   int double_points = (team['2 pointers'] ?? 0) * 2;
   int triple_points = (team['3 pointers'] ?? 0) * 3;
 
-  print((normal_points, double_points, triple_points));
-
   return normal_points + double_points + triple_points;
 }
 
