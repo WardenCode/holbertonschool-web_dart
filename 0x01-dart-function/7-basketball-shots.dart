@@ -13,9 +13,6 @@ int whoWins(Map<String, int> teamA, Map<String, int> teamB) {
   teamAScore = calcTeamScore(teamA);
   teamBScore = calcTeamScore(teamB);
 
-  print(teamAScore);
-  print(teamBScore);
-
   if (teamAScore == teamBScore) return 0;
 
   if (teamAScore > teamBScore) return 1;
