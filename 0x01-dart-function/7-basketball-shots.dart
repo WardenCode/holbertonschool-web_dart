@@ -1,7 +1,7 @@
 int calcTeamScore(Map<String, int> team) {
-  int normal_points = team['Free throws']!;
-  int double_points = team['2 pointer']! * 2;
-  int triple_points = team['3 pointer']! * 3;
+  int normal_points = team['Free throws'] ?? 0;
+  int double_points = (team['2 pointer'] ?? 0) * 2;
+  int triple_points = (team['3 pointer'] ?? 0) * 3;
 
   return normal_points + double_points + triple_points;
 }
