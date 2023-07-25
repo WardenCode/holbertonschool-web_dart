@@ -5,23 +5,13 @@ String base_url = 'https://rickandmortyapi.com/api';
 
 Future<List<String>> getAllCharacters() async {
   String url = '${base_url}/character';
-  bool nextPage = true;
   List<String> names = [];
 
-  while (nextPage) {
-    final response = await http.get(Uri.parse(url));
-    final data = jsonDecode(response.body);
+  final response = await http.get(Uri.parse(url));
+  final data = jsonDecode(response.body);
 
-    for (var character in data['results']) {
-      names.add(character['name']);
-    }
-
-    if (data['info']['next'] != null) {
-      url = data['info']['next'];
-      nextPage = true;
-    } else {
-      nextPage = false;
-    }
+  for (var character in data['results']) {
+    names.add(character['name']);
   }
 
   return (names);
